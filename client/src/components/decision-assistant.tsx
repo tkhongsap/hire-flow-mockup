@@ -111,20 +111,20 @@ export function DecisionAssistant() {
                 AI Recommendation
               </h5>
               <p className="text-blue-800 mb-4">
-                Sarah Chen emerges as the strongest candidate with exceptional technical skills and strong cultural alignment. Her React expertise and leadership experience make her ideal for this senior role.
+                Siriporn Rattanakul emerges as the strongest candidate with exceptional marketing expertise and deep understanding of Thai beverage market. Her Chang Beer campaign experience makes her ideal for this senior marketing role.
               </p>
               <div className="space-y-2 text-sm">
                 <div className="flex items-center text-blue-700">
                   <UserCheck className="mr-2 w-4 h-4" />
-                  Exceeds technical requirements
+                  Exceeds marketing experience requirements
                 </div>
                 <div className="flex items-center text-blue-700">
                   <UserCheck className="mr-2 w-4 h-4" />
-                  Strong team leadership background
+                  Proven beverage industry background
                 </div>
                 <div className="flex items-center text-blue-700">
                   <UserCheck className="mr-2 w-4 h-4" />
-                  High cultural fit score
+                  Excellent cultural fit for Thai market
                 </div>
               </div>
             </div>
@@ -136,13 +136,13 @@ export function DecisionAssistant() {
               </h5>
               <div className="space-y-3 text-sm">
                 <div className="text-amber-800">
-                  <strong>Salary Expectations:</strong> Sarah's expectations may be 15% above budget range
+                  <strong>Salary Expectations:</strong> Siriporn's expectations align with ThaiBev's senior manager range
                 </div>
                 <div className="text-amber-800">
-                  <strong>Start Date:</strong> Marcus available immediately, Sarah needs 4-week notice
+                  <strong>Start Date:</strong> Nattapong available immediately, Siriporn needs 6-week notice
                 </div>
                 <div className="text-amber-800">
-                  <strong>Alternative:</strong> Marcus shows strong potential with additional TypeScript training
+                  <strong>Alternative:</strong> Nattapong shows strong sales potential but needs brand marketing training
                 </div>
               </div>
             </div>
@@ -151,7 +151,7 @@ export function DecisionAssistant() {
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
             <Button className="bg-accent text-white hover:bg-green-700 flex-1">
               <UserCheck className="mr-2 w-4 h-4" />
-              Select Sarah Chen
+              Select Siriporn Rattanakul
             </Button>
             <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white flex-1">
               <FileText className="mr-2 w-4 h-4" />

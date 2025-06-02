@@ -9,10 +9,10 @@ export function ResumeFitScorer() {
   const [candidates] = useState(mockCandidates);
 
   const jobRequirements = [
-    "5+ years React experience",
-    "TypeScript proficiency", 
-    "Node.js backend knowledge",
-    "Team leadership experience"
+    "7+ years marketing experience in F&B/FMCG",
+    "Digital marketing and social media expertise", 
+    "Brand management and campaign development",
+    "Thai market knowledge and cultural understanding"
   ];
 
   const getScoreColor = (score: number) => {
@@ -49,7 +49,7 @@ export function ResumeFitScorer() {
             <div>
               <h4 className="font-semibold text-slate-900 mb-4">Job Requirements</h4>
               <div className="bg-gray-50 p-4 rounded-lg mb-6">
-                <h5 className="font-medium mb-2">Senior React Developer</h5>
+                <h5 className="font-medium mb-2">Senior Digital Marketing Manager</h5>
                 <div className="space-y-2 text-sm text-secondary">
                   {jobRequirements.map((req, index) => (
                     <div key={index}>• {req}</div>

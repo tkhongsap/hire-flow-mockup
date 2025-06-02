@@ -185,20 +185,20 @@ export const mockOnboardingPlans: OnboardingPlan[] = [
 ];
 
 export const interviewQuestions = [
-  "Can you walk me through how you'd handle state management in a large React application?",
-  "How would you compare Redux vs Context API for this scenario?",
-  "What performance considerations would you keep in mind?",
-  "Can you give an example from your previous experience?",
-  "How do you approach testing in React applications?",
-  "What's your experience with TypeScript?",
-  "How do you handle error boundaries in React?",
-  "What's your approach to component architecture?"
+  "Can you describe your approach to developing integrated marketing campaigns for beverage brands?",
+  "How would you leverage digital channels to reach younger Thai consumers for Chang Beer?",
+  "What's your experience with trade marketing and distributor relationship management?",
+  "Can you give an example of a successful brand campaign you've managed?",
+  "How do you measure campaign effectiveness and ROI in the F&B industry?",
+  "What's your understanding of the Thai beverage market landscape?",
+  "How would you handle seasonal marketing challenges for alcoholic beverages?",
+  "What's your approach to working with creative agencies and media partners?"
 ];
 
 export const followUpQuestions = [
-  "How would you compare Redux vs Context API for this scenario?",
-  "What performance considerations would you keep in mind?",
-  "Can you give an example from your previous experience?",
+  "How would you adapt that strategy for the Thai market specifically?",
+  "What KPIs would you track to measure success?",
+  "Can you give an example from your Chang Beer campaign experience?",
 ];
 
 export const engagementFactors = [
