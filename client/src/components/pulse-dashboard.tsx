@@ -101,7 +101,7 @@ export function PulseDashboard() {
                       </div>
                       
                       <div className="mt-3 flex flex-wrap gap-1">
-                        {employee.tags.map((tag, index) => (
+                        {(employee.tags || []).map((tag, index) => (
                           <Badge key={index} variant="secondary" className="text-xs">
                             {tag}
                           </Badge>
