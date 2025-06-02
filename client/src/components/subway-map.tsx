@@ -1,4 +1,5 @@
 import { Search, MessageSquare, BarChart3, Handshake, Heart } from "lucide-react";
+import { Link } from "wouter";
 
 interface SubwayMapProps {
   onNavigate: (section: string) => void;
@@ -8,24 +9,27 @@ export function SubwayMap({ onNavigate }: SubwayMapProps) {
   const stops = [
     {
       id: "resume-scorer",
+      path: "/resume-scorer",
       title: "Discover & Screen",
       description: "Resume-Fit Scorer analyzes and ranks candidates automatically",
       icon: Search,
       step: "Step 1",
       bgColor: "bg-blue-100",
-      iconColor: "text-primary",
+      iconColor: "text-blue-600",
     },
     {
       id: "interview-copilot",
+      path: "/interview-copilot",
       title: "Assess & Interview",
       description: "Interview Copilot guides conversations and evaluations",
       icon: MessageSquare,
       step: "Step 2",
       bgColor: "bg-green-100",
-      iconColor: "text-accent",
+      iconColor: "text-green-600",
     },
     {
       id: "decision-assistant",
+      path: "/decision-assistant",
       title: "Decide & Select",
       description: "Decision Assistant compares candidates objectively",
       icon: BarChart3,
@@ -35,6 +39,7 @@ export function SubwayMap({ onNavigate }: SubwayMapProps) {
     },
     {
       id: "offercraft",
+      path: "/offercraft",
       title: "Offer & Onboard",
       description: "OfferCraft creates packages and 90-day plans",
       icon: Handshake,
@@ -44,12 +49,13 @@ export function SubwayMap({ onNavigate }: SubwayMapProps) {
     },
     {
       id: "pulse-dashboard",
+      path: "/pulse-dashboard",
       title: "Engage & Retain",
       description: "Pulse monitors satisfaction and flight-risk",
       icon: Heart,
       step: "Step 5",
-      bgColor: "bg-green-100",
-      iconColor: "text-accent",
+      bgColor: "bg-red-100",
+      iconColor: "text-red-600",
     },
   ];
 
