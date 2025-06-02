@@ -81,21 +81,21 @@ export function SubwayMap({ onNavigate }: SubwayMapProps) {
               const isLast = index === stops.length - 1;
               
               return (
-                <div 
+                <Link 
                   key={stop.id}
-                  className="flex flex-col items-center max-w-xs cursor-pointer group" 
-                  onClick={() => onNavigate(stop.id)}
+                  href={stop.path}
+                  className="flex flex-col items-center max-w-xs cursor-pointer group"
                 >
-                  <div className={`w-6 h-6 ${isLast ? 'bg-accent' : 'bg-primary'} rounded-full border-4 border-white shadow-lg mb-4 group-hover:scale-110 transition-transform`}></div>
+                  <div className={`w-6 h-6 ${isLast ? 'bg-red-500' : 'bg-blue-500'} rounded-full border-4 border-white shadow-lg mb-4 group-hover:scale-110 transition-transform`}></div>
                   <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition-all">
                     <div className={`w-12 h-12 ${stop.bgColor} rounded-lg flex items-center justify-center mb-4`}>
                       <Icon className={`${stop.iconColor} w-6 h-6`} />
                     </div>
                     <h3 className="font-semibold text-slate-900 mb-2">{stop.title}</h3>
-                    <p className="text-sm text-secondary mb-3">{stop.description}</p>
-                    <span className="text-xs text-primary font-medium">{stop.step}</span>
+                    <p className="text-sm text-gray-600 mb-3">{stop.description}</p>
+                    <span className="text-xs text-blue-600 font-medium">{stop.step}</span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -108,19 +108,19 @@ export function SubwayMap({ onNavigate }: SubwayMapProps) {
             const isLast = index === stops.length - 1;
             
             return (
-              <div 
+              <Link 
                 key={stop.id}
+                href={stop.path}
                 className="flex items-center space-x-4 cursor-pointer" 
-                onClick={() => onNavigate(stop.id)}
               >
-                <div className={`w-8 h-8 ${isLast ? 'bg-accent' : 'bg-primary'} rounded-full flex items-center justify-center flex-shrink-0`}>
+                <div className={`w-8 h-8 ${isLast ? 'bg-red-500' : 'bg-blue-500'} rounded-full flex items-center justify-center flex-shrink-0`}>
                   <span className="text-white text-sm font-medium">{index + 1}</span>
                 </div>
                 <div className="flex-1 bg-white p-4 rounded-lg shadow border border-gray-200">
                   <h3 className="font-semibold text-slate-900 mb-1">{stop.title}</h3>
-                  <p className="text-sm text-secondary">{stop.description.split(' ').slice(0, 3).join(' ')}</p>
+                  <p className="text-sm text-gray-600">{stop.description.split(' ').slice(0, 3).join(' ')}</p>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
