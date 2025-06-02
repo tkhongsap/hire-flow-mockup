@@ -49,7 +49,7 @@ export function InterviewCopilot() {
                 <h4 className="font-semibold text-slate-900">Live Interview Session</h4>
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse-slow"></div>
-                  <span className="text-sm text-secondary">Recording</span>
+                  <span className="text-sm text-gray-600">Recording</span>
                 </div>
               </div>
               
@@ -80,21 +80,21 @@ export function InterviewCopilot() {
                 <h5 className="font-medium text-slate-900 mb-3">Real-time Response Analysis</h5>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-secondary">Technical Accuracy</span>
+                    <span className="text-sm text-gray-600">Technical Accuracy</span>
                     <div className="flex items-center space-x-2">
                       <Progress value={currentInterview.technicalAccuracy || 0} className="w-20 h-2" />
                       <span className="text-sm font-medium">{currentInterview.technicalAccuracy}%</span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-secondary">Communication Clarity</span>
+                    <span className="text-sm text-gray-600">Communication Clarity</span>
                     <div className="flex items-center space-x-2">
                       <Progress value={currentInterview.communicationClarity || 0} className="w-20 h-2" />
                       <span className="text-sm font-medium">{currentInterview.communicationClarity}%</span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-secondary">Problem-Solving Approach</span>
+                    <span className="text-sm text-gray-600">Problem-Solving Approach</span>
                     <div className="flex items-center space-x-2">
                       <Progress value={currentInterview.problemSolvingApproach || 0} className="w-20 h-2" />
                       <span className="text-sm font-medium">{currentInterview.problemSolvingApproach}%</span>
@@ -111,7 +111,7 @@ export function InterviewCopilot() {
               <div className="space-y-3">
                 <div>
                   <h5 className="font-medium text-slate-900">{currentCandidate.name}</h5>
-                  <p className="text-sm text-secondary">{currentCandidate.title}</p>
+                  <p className="text-sm text-gray-600">{currentCandidate.title}</p>
                 </div>
                 
                 <div className="border-t pt-3">
@@ -129,7 +129,7 @@ export function InterviewCopilot() {
                   <h6 className="text-sm font-medium text-slate-900 mb-2">Interview Progress</h6>
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-secondary">Questions Completed</span>
+                      <span className="text-gray-600">Questions Completed</span>
                       <span className="font-medium">{currentInterview.currentQuestion}/{currentInterview.totalQuestions}</span>
                     </div>
                     <Progress value={(currentInterview.currentQuestion / currentInterview.totalQuestions) * 100} className="h-2" />
@@ -140,7 +140,7 @@ export function InterviewCopilot() {
                   <h6 className="text-sm font-medium text-slate-900 mb-2">Overall Rating</h6>
                   <div className="flex items-center space-x-2">
                     {renderStars(parseFloat(currentInterview.overallRating || "0"))}
-                    <span className="text-sm text-secondary">{currentInterview.overallRating}/5</span>
+                    <span className="text-sm text-gray-600">{currentInterview.overallRating}/5</span>
                   </div>
                 </div>
               </div>

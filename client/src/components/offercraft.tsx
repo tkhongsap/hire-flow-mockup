@@ -112,7 +112,7 @@ export function OfferCraft() {
                         <Icon className={`${benefit.color} w-5 h-5`} />
                         <div>
                           <div className="font-medium text-sm">{benefit.title}</div>
-                          <div className="text-xs text-secondary">{benefit.description}</div>
+                          <div className="text-xs text-gray-600">{benefit.description}</div>
                         </div>
                       </div>
                     );
@@ -132,7 +132,7 @@ export function OfferCraft() {
                       <h5 className="font-medium text-slate-900">{phase.title}</h5>
                       <Badge className={phase.badgeColor}>{phase.badge}</Badge>
                     </div>
-                    <ul className="space-y-2 text-sm text-secondary">
+                    <ul className="space-y-2 text-sm text-gray-600">
                       {phase.tasks.map((task, taskIndex) => (
                         <li key={taskIndex} className="flex items-center">
                           <div className={`w-2 h-2 ${phase.color} rounded-full mr-2 flex-shrink-0`}></div>
@@ -151,7 +151,7 @@ export function OfferCraft() {
                   {successMetrics.map((metric, index) => (
                     <div key={index} className="text-center">
                       <div className={`font-semibold ${metric.color}`}>{metric.value}</div>
-                      <div className="text-secondary">{metric.label}</div>
+                      <div className="text-gray-600">{metric.label}</div>
                     </div>
                   ))}
                 </div>

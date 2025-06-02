@@ -63,7 +63,7 @@ export function DecisionAssistant() {
                             </div>
                             <div>
                               <div className="font-medium text-slate-900">{candidate.name}</div>
-                              <div className="text-sm text-secondary">{candidate.title.split(' ').slice(0, 2).join(' ')}</div>
+                              <div className="text-sm text-gray-600">{candidate.title.split(' ').slice(0, 2).join(' ')}</div>
                             </div>
                           </div>
                         </td>

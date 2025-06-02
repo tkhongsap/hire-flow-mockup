@@ -66,7 +66,7 @@ export function SubwayMap({ onNavigate }: SubwayMapProps) {
           <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
             Your Recruitment Journey
           </h2>
-          <p className="text-xl text-secondary max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Navigate through each stage with AI-powered precision
           </p>
         </div>

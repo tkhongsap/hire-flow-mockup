@@ -154,7 +154,7 @@ export function PulseDashboard() {
                   {engagementFactors.map((factor, index) => (
                     <div key={index}>
                       <div className="flex justify-between text-sm mb-1">
-                        <span className="text-secondary">{factor.name}</span>
+                        <span className="text-gray-600">{factor.name}</span>
                         <span className="font-medium">{factor.score}/10</span>
                       </div>
                       <div className="bg-gray-200 rounded-full h-2">
