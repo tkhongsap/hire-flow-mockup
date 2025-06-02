@@ -49,8 +49,8 @@ export function ResumeFitScorer() {
             <div>
               <h4 className="font-semibold text-slate-900 mb-4">Job Requirements</h4>
               <div className="bg-gray-50 p-4 rounded-lg mb-6">
-                <h5 className="font-medium mb-2">Senior Digital Marketing Manager</h5>
-                <div className="space-y-2 text-sm text-secondary">
+                <h5 className="font-medium mb-2 text-slate-900">Senior Digital Marketing Manager</h5>
+                <div className="space-y-2 text-sm text-gray-700">
                   {jobRequirements.map((req, index) => (
                     <div key={index}>• {req}</div>
                   ))}
@@ -60,7 +60,7 @@ export function ResumeFitScorer() {
               {/* Upload Area */}
               <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-primary transition-colors cursor-pointer">
                 <Upload className="mx-auto text-3xl text-gray-400 mb-4 w-12 h-12" />
-                <p className="text-secondary mb-2">Drop resumes here or click to upload</p>
+                <p className="text-gray-600 mb-2">Drop resumes here or click to upload</p>
                 <Button variant="ghost" className="text-primary hover:text-blue-700">
                   Browse Files
                 </Button>
@@ -76,13 +76,13 @@ export function ResumeFitScorer() {
                     <div className="flex items-center justify-between mb-3">
                       <div>
                         <h5 className="font-medium text-slate-900">{candidate.name}</h5>
-                        <p className="text-sm text-secondary">{candidate.title}</p>
+                        <p className="text-sm text-gray-600">{candidate.title}</p>
                       </div>
                       <div className="text-right">
                         <div className={`text-2xl font-bold ${getScoreColor(candidate.overallScore || 0)}`}>
                           {candidate.overallScore}%
                         </div>
-                        <div className="text-xs text-secondary">Match Score</div>
+                        <div className="text-xs text-gray-600">Match Score</div>
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-2 mb-3">

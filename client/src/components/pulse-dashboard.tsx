@@ -72,8 +72,8 @@ export function PulseDashboard() {
                           </div>
                           <div>
                             <h5 className="font-medium text-slate-900">{employee.name}</h5>
-                            <p className="text-sm text-secondary">{employee.role}</p>
-                            <p className="text-xs text-secondary">Day {employee.tenure} of 90</p>
+                            <p className="text-sm text-gray-600">{employee.role}</p>
+                            <p className="text-xs text-gray-600">Day {employee.tenure} of 90</p>
                           </div>
                         </div>
                         <div className="text-right">
@@ -81,22 +81,22 @@ export function PulseDashboard() {
                             <span className={`w-3 h-3 ${riskInfo.bgColor} rounded-full`}></span>
                             <span className={`text-sm font-medium ${riskInfo.color}`}>{riskInfo.label}</span>
                           </div>
-                          <div className="text-xs text-secondary">Risk Score: {employee.flightRiskScore}%</div>
+                          <div className="text-xs text-gray-600">Risk Score: {employee.flightRiskScore}%</div>
                         </div>
                       </div>
                       
                       <div className="grid grid-cols-3 gap-4 text-sm">
                         <div className="text-center">
                           <div className="font-medium text-green-600">{employee.satisfactionScore}</div>
-                          <div className="text-secondary">Satisfaction</div>
+                          <div className="text-gray-600">Satisfaction</div>
                         </div>
                         <div className="text-center">
                           <div className="font-medium text-blue-600">{employee.productivityScore}%</div>
-                          <div className="text-secondary">Productivity</div>
+                          <div className="text-gray-600">Productivity</div>
                         </div>
                         <div className="text-center">
                           <div className="font-medium text-purple-600">{employee.integrationScore}%</div>
-                          <div className="text-secondary">Team Integration</div>
+                          <div className="text-gray-600">Team Integration</div>
                         </div>
                       </div>
                       
