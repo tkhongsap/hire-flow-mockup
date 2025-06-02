@@ -1,137 +1,284 @@
-import { useEffect, useRef } from "react";
-import { Navigation } from "@/components/navigation";
-import { HeroSection } from "@/components/hero-section";
-import { SubwayMap } from "@/components/subway-map";
-import { Footer } from "@/components/footer";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Users, MessageSquare, CheckCircle, Gift, TrendingUp, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 
 export default function Home() {
-  const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
+  const [, setLocation] = useLocation();
+  const [hoveredStation, setHoveredStation] = useState<number | null>(null);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = sectionsRef.current[sectionId] || document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+  const stations = [
+    {
+      id: 1,
+      name: "Resume-Fit Scorer",
+      stage: "Discover & Screen",
+      icon: Users,
+      painPoint: "Manual resume screening takes days",
+      solution: "AI ranks candidates in minutes",
+      route: "/resume-scorer",
+      benefits: [
+        "50% faster candidate screening",
+        "Eliminate unconscious bias",
+        "Standardized scoring metrics"
+      ]
+    },
+    {
+      id: 2,
+      name: "Interview Copilot",
+      stage: "Assess & Interview",
+      icon: MessageSquare,
+      painPoint: "Inconsistent interview quality",
+      solution: "Real-time guidance & question suggestions",
+      route: "/interview-copilot",
+      benefits: [
+        "Structured interview framework",
+        "Real-time candidate insights",
+        "Automated note-taking"
+      ]
+    },
+    {
+      id: 3,
+      name: "Decision Assistant",
+      stage: "Decide & Select",
+      icon: CheckCircle,
+      painPoint: "Complex multi-stakeholder decisions",
+      solution: "Data-driven recommendation engine",
+      route: "/decision-assistant",
+      benefits: [
+        "Objective candidate comparison",
+        "Risk assessment scoring",
+        "Collaborative decision making"
+      ]
+    },
+    {
+      id: 4,
+      name: "OfferCraft + 90-Day",
+      stage: "Offer & Onboard",
+      icon: Gift,
+      painPoint: "Generic offers lead to rejections",
+      solution: "Personalized packages & onboarding",
+      route: "/offercraft",
+      benefits: [
+        "15% higher offer acceptance",
+        "Tailored compensation packages",
+        "90-day success tracking"
+      ]
+    },
+    {
+      id: 5,
+      name: "Pulse + Flight-Risk",
+      stage: "Early-Tenure Engagement",
+      icon: TrendingUp,
+      painPoint: "Early attrition blindsides teams",
+      solution: "Predictive engagement monitoring",
+      route: "/pulse-dashboard",
+      benefits: [
+        "5% reduced early attrition",
+        "Proactive intervention alerts",
+        "Continuous engagement tracking"
+      ]
     }
+  ];
+
+  const handleStationClick = (route: string) => {
+    setLocation(route);
   };
 
-  useEffect(() => {
-    // Store refs for all sections
-    const sections = ['overview', 'subway-map', 'solutions'];
-    sections.forEach(id => {
-      sectionsRef.current[id] = document.getElementById(id);
-    });
-
-    // Intersection Observer for animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
-        }
-      });
-    }, observerOptions);
-
-    // Observe sections
-    const animatedSections = document.querySelectorAll('[data-animate]');
-    animatedSections.forEach(el => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div className="min-h-screen bg-white">
-      <Navigation onNavigate={scrollToSection} />
-      
-      <main>
-        <HeroSection onNavigate={scrollToSection} />
-        <SubwayMap onNavigate={scrollToSection} />
-        
-        <section id="solutions" className="py-16 lg:py-24 bg-gray-50" data-animate>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                Transform Your Recruitment Process
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                HireFlow 5 empowers ThaiBev's HR team with AI-driven insights at every stage of the recruitment journey, 
-                from initial screening to long-term employee engagement.
-              </p>
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-slate-900 text-white">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">H5</span>
+              </div>
+              <h1 className="text-xl font-semibold">HireFlow 5</h1>
             </div>
+            
+            {/* Value Bar */}
+            <motion.div 
+              className="hidden md:flex items-center space-x-6 text-sm"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <motion.div 
+                className="flex items-center space-x-2"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              >
+                <span className="text-green-400 font-medium">50% faster fill</span>
+              </motion.div>
+              <span className="text-gray-400">•</span>
+              <motion.div 
+                className="flex items-center space-x-2"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, delay: 1 }}
+              >
+                <span className="text-blue-400 font-medium">+15% quality-hire</span>
+              </motion.div>
+              <span className="text-gray-400">•</span>
+              <motion.div 
+                className="flex items-center space-x-2"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, delay: 2 }}
+              >
+                <span className="text-purple-400 font-medium">-5% early attrition</span>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </header>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Feature Cards */}
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">🎯</span>
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Smart Candidate Screening</h3>
-                <p className="text-gray-600 mb-4">
-                  AI-powered resume analysis and scoring tailored for F&B industry roles, helping you identify top talent faster.
-                </p>
-              </div>
+      {/* Main Content */}
+      <main className="container mx-auto px-6 py-12">
+        <div className="text-center mb-12">
+          <motion.h2 
+            className="text-4xl font-bold text-slate-900 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            AI-Powered Recruitment Rail
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Navigate through the complete recruitment lifecycle with five intelligent micro-apps
+          </motion.p>
+        </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">💬</span>
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Interview Intelligence</h3>
-                <p className="text-gray-600 mb-4">
-                  Real-time interview guidance with industry-specific questions and performance analytics.
-                </p>
-              </div>
+        {/* Horizontal Subway Map */}
+        <div className="relative">
+          {/* Desktop Horizontal Layout */}
+          <div className="hidden lg:block">
+            <div className="flex items-center justify-between mb-8">
+              {stations.map((station, index) => (
+                <div key={station.id} className="flex-1 relative">
+                  {/* Station */}
+                  <motion.div
+                    className="relative"
+                    onHoverStart={() => setHoveredStation(station.id)}
+                    onHoverEnd={() => setHoveredStation(null)}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    {/* Station Card */}
+                    <div className="bg-white rounded-lg shadow-md p-6 mx-4 cursor-pointer hover:shadow-lg transition-all duration-300 relative z-10">
+                      <div className="text-center">
+                        <div className={`w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 flex items-center justify-center`}>
+                          <station.icon className="w-6 h-6 text-blue-600" />
+                        </div>
+                        <h3 className="font-semibold text-slate-900 mb-1">{station.name}</h3>
+                        <p className="text-sm text-gray-600 mb-2">{station.stage}</p>
+                        <p className="text-xs text-gray-500 mb-1">{station.painPoint}</p>
+                        <p className="text-xs text-blue-600 font-medium">{station.solution}</p>
+                      </div>
+                    </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">📊</span>
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Data-Driven Decisions</h3>
-                <p className="text-gray-600 mb-4">
-                  Objective candidate comparison and selection recommendations based on comprehensive analytics.
-                </p>
-              </div>
+                    {/* Benefits Fly-out */}
+                    {hoveredStation === station.id && (
+                      <motion.div
+                        className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-slate-900 text-white rounded-lg p-4 shadow-xl z-20 w-64"
+                        initial={{ opacity: 0, y: -10, scale: 0.9 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-slate-900 rotate-45"></div>
+                        <div className="space-y-2 mb-4">
+                          {station.benefits.map((benefit, idx) => (
+                            <div key={idx} className="flex items-start space-x-2">
+                              <span className="text-green-400 text-xs mt-1">•</span>
+                              <span className="text-sm">{benefit}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <Button 
+                          className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                          onClick={() => handleStationClick(station.route)}
+                        >
+                          Enter Demo
+                          <ChevronRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      </motion.div>
+                    )}
+                  </motion.div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">🤝</span>
+                  {/* Connection Line */}
+                  {index < stations.length - 1 && (
+                    <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-4 h-0.5 bg-blue-300 z-0"></div>
+                  )}
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Personalized Offers</h3>
-                <p className="text-gray-600 mb-4">
-                  Craft competitive packages with ThaiBev-specific benefits and comprehensive onboarding plans.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">💗</span>
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Employee Engagement</h3>
-                <p className="text-gray-600 mb-4">
-                  Monitor satisfaction and predict flight risk to ensure long-term retention and success.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">📈</span>
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">ROI & Analytics</h3>
-                <p className="text-gray-600 mb-4">
-                  Track hiring success metrics and optimize your recruitment process with actionable insights.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
-        </section>
+
+          {/* Mobile Vertical Layout */}
+          <div className="lg:hidden space-y-6">
+            {stations.map((station, index) => (
+              <motion.div
+                key={station.id}
+                className="bg-white rounded-lg shadow-md p-6"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <station.icon className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-slate-900 mb-1">{station.name}</h3>
+                    <p className="text-sm text-gray-600 mb-2">{station.stage}</p>
+                    <p className="text-xs text-gray-500 mb-2">{station.painPoint}</p>
+                    <p className="text-xs text-blue-600 font-medium mb-3">{station.solution}</p>
+                    
+                    <div className="space-y-1 mb-4">
+                      {station.benefits.map((benefit, idx) => (
+                        <div key={idx} className="flex items-start space-x-2">
+                          <span className="text-green-500 text-xs mt-1">•</span>
+                          <span className="text-sm text-gray-600">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <Button 
+                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      onClick={() => handleStationClick(station.route)}
+                    >
+                      Enter Demo
+                      <ChevronRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </main>
-      
-      <Footer onNavigate={scrollToSection} />
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 mt-16">
+        <div className="container mx-auto px-6 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-gray-600 text-sm mb-4 md:mb-0">
+              © 2025 HireFlow 5. Built for modern recruitment teams.
+            </div>
+            <div className="flex space-x-6 text-sm">
+              <a href="#" className="text-gray-600 hover:text-blue-600">API Documentation</a>
+              <a href="#" className="text-gray-600 hover:text-blue-600">Contact</a>
+              <a href="#" className="text-gray-600 hover:text-blue-600">Security</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
