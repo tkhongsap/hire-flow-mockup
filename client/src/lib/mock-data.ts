@@ -150,7 +150,7 @@ export const mockOffers: Offer[] = [
     bonus: 180000,
     equity: "0.15",
     signingBonus: 50000,
-    benefits: ["Premium Health Insurance", "Company Car Allowance", "Annual Performance Bonus", "Chang Beer Product Allocation"],
+    benefits: ["ประกันสุขภาพเบี้ยแพง", "ค่าน้ำมันรถยนต์", "โบนัสผลงาน", "สิทธิ์สินค้าเบียร์ช้าง"],
     startDate: new Date('2024-02-15'),
     status: "draft",
     createdAt: new Date('2024-01-19'),
@@ -162,19 +162,19 @@ export const mockOnboardingPlans: OnboardingPlan[] = [
     id: 1,
     employeeId: 1,
     week1Tasks: [
-      "Complete ThaiBev orientation and safety training",
-      "Meet marketing team and brand managers",
-      "Review Chang Beer brand guidelines and campaign history"
+      "เข้าร่วมการปฐมนิเทศและการฝึกอบรมด้านความปลอดภัย",
+      "พบปะทีมการตลาดและผู้จัดการแบรนด์",
+      "ศึกษาแนวทางแบรนด์เบียร์ช้างและประวัติแคมเปญ"
     ],
     week3to6Tasks: [
-      "Shadow senior brand manager on current campaigns",
-      "Analyze market research and consumer insights",
-      "Participate in trade marketing strategy sessions"
+      "ติดตามผู้จัดการแบรนด์อาวุโสในแคมเปญปัจจุบัน",
+      "วิเคราะห์การวิจัยตลาดและข้อมูลเชิงลึกผู้บริโภค",
+      "เข้าร่วมการประชุมกลยุทธ์การตลาดค้าส่ง"
     ],
     week7to12Tasks: [
-      "Lead digital marketing campaign for seasonal promotion",
-      "Coordinate with agencies and media partners",
-      "Present campaign performance analysis to leadership"
+      "นำแคมเปญการตลาดดิจิทัลสำหรับโปรโมชั่นตามฤดูกาล",
+      "ประสานงานกับเอเจนซี่และพันธมิตรสื่อ",
+      "นำเสนอการวิเคราะห์ผลงานแคมเปญต่อผู้บริหาร"
     ],
     setupCompletion: 95,
     teamIntegration: "4.8",
@@ -185,25 +185,25 @@ export const mockOnboardingPlans: OnboardingPlan[] = [
 ];
 
 export const interviewQuestions = [
-  "Can you describe your approach to developing integrated marketing campaigns for beverage brands?",
-  "How would you leverage digital channels to reach younger Thai consumers for Chang Beer?",
-  "What's your experience with trade marketing and distributor relationship management?",
-  "Can you give an example of a successful brand campaign you've managed?",
-  "How do you measure campaign effectiveness and ROI in the F&B industry?",
-  "What's your understanding of the Thai beverage market landscape?",
-  "How would you handle seasonal marketing challenges for alcoholic beverages?",
-  "What's your approach to working with creative agencies and media partners?"
+  "คุณสามารถอธิบายแนวทางในการพัฒนาแคมเปญการตลาดแบบบูรณาการสำหรับแบรนด์เครื่องดื่มได้หรือไม่?",
+  "คุณจะใช้ช่องทางดิจิทัลอย่างไรเพื่อเข้าถึงผู้บริโภคไทยรุ่นใหม่สำหรับเบียร์ช้าง?",
+  "ประสบการณ์ของคุณในการตลาดค้าส่งและการจัดการความสัมพันธ์กับผู้จัดจำหน่ายเป็นอย่างไร?",
+  "คุณสามารถยกตัวอย่างแคมเปญแบรนด์ที่ประสบความสำเร็จที่คุณเคยดูแลได้หรือไม่?",
+  "คุณวัดประสิทธิผลของแคมเปญและ ROI ในอุตสาหกรรมอาหารและเครื่องดื่มอย่างไร?",
+  "ความเข้าใจของคุณเกี่ยวกับภูมิทัศน์ตลาดเครื่องดื่มไทยเป็นอย่างไร?",
+  "คุณจะจัดการกับความท้าทายด้านการตลาดตามฤดูกาลสำหรับเครื่องดื่มแอลกอฮอล์อย่างไร?",
+  "แนวทางของคุณในการทำงานร่วมกับเอเจนซี่ครีเอทีฟและพันธมิตรสื่อเป็นอย่างไร?"
 ];
 
 export const followUpQuestions = [
-  "How would you adapt that strategy for the Thai market specifically?",
-  "What KPIs would you track to measure success?",
-  "Can you give an example from your Chang Beer campaign experience?",
+  "คุณจะปรับกลยุทธ์นั้นให้เข้ากับตลาดไทยโดยเฉพาะอย่างไร?",
+  "KPI ใดบ้างที่คุณจะติดตามเพื่อวัดความสำเร็จ?",
+  "คุณสามารถยกตัวอย่างจากประสบการณ์แคมเปญเบียร์ช้างของคุณได้หรือไม่?",
 ];
 
 export const engagementFactors = [
-  { name: "Work-Life Balance", score: 87, color: "green" },
-  { name: "Career Growth", score: 79, color: "blue" },
-  { name: "Team Collaboration", score: 82, color: "purple" },
-  { name: "Manager Support", score: 68, color: "yellow" },
+  { name: "สมดุลชีวิตการทำงาน", score: 87, color: "green" },
+  { name: "การเติบโตในอาชีพ", score: 79, color: "blue" },
+  { name: "การทำงานเป็นทีม", score: 82, color: "purple" },
+  { name: "การสนับสนุนจากผู้จัดการ", score: 68, color: "yellow" },
 ];

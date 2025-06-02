@@ -9,16 +9,16 @@ export function PulseDashboard() {
   const [employees] = useState(mockEmployees);
 
   const metrics = [
-    { label: "Overall Satisfaction", value: "8.4/10", change: "↑ 0.3 from last month", color: "text-green-600", bgColor: "bg-green-50 border-green-200" },
-    { label: "Engagement Score", value: "87%", change: "↑ 5% from last month", color: "text-blue-600", bgColor: "bg-blue-50 border-blue-200" },
-    { label: "High Flight-Risk", value: "12%", change: "↓ 3% from last month", color: "text-amber-600", bgColor: "bg-amber-50 border-amber-200" },
-    { label: "90-Day Retention", value: "94%", change: "↑ 2% from last quarter", color: "text-purple-600", bgColor: "bg-purple-50 border-purple-200" },
+    { label: "ความพึงพอใจโดยรวม", value: "8.4/10", change: "↑ 0.3 จากเดือนที่แล้ว", color: "text-green-600", bgColor: "bg-green-50 border-green-200" },
+    { label: "คะแนนการมีส่วนร่วม", value: "87%", change: "↑ 5% จากเดือนที่แล้ว", color: "text-blue-600", bgColor: "bg-blue-50 border-blue-200" },
+    { label: "ความเสี่ยงลาออกสูง", value: "12%", change: "↓ 3% จากเดือนที่แล้ว", color: "text-amber-600", bgColor: "bg-amber-50 border-amber-200" },
+    { label: "การคงอยู่ 90 วัน", value: "94%", change: "↑ 2% จากไตรมาสที่แล้ว", color: "text-purple-600", bgColor: "bg-purple-50 border-purple-200" },
   ];
 
   const getRiskColor = (score: number) => {
-    if (score <= 25) return { color: "text-green-700", bgColor: "bg-green-500", label: "Low Risk" };
-    if (score <= 50) return { color: "text-yellow-700", bgColor: "bg-yellow-500", label: "Medium Risk" };
-    return { color: "text-red-700", bgColor: "bg-red-500", label: "High Risk" };
+    if (score <= 25) return { color: "text-green-700", bgColor: "bg-green-500", label: "ความเสี่ยงต่ำ" };
+    if (score <= 50) return { color: "text-yellow-700", bgColor: "bg-yellow-500", label: "ความเสี่ยงปานกลาง" };
+    return { color: "text-red-700", bgColor: "bg-red-500", label: "ความเสี่ยงสูง" };
   };
 
   const getProgressColor = (score: number) => {

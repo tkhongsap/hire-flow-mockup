@@ -10,9 +10,9 @@ export function OfferCraft() {
   const [onboardingPlan] = useState(mockOnboardingPlans[0]);
 
   const benefits = [
-    { icon: Shield, title: "Premium Health Coverage", description: "100% covered, family included", color: "text-blue-600" },
-    { icon: Laptop, title: "Remote-First Culture", description: "$2,000 home office setup", color: "text-purple-600" },
-    { icon: GraduationCap, title: "Learning & Development", description: "$3,000 annual budget", color: "text-green-600" },
+    { icon: Shield, title: "ประกันสุขภาพเบี้ยแพง", description: "ครอบคลุม 100% รวมครอบครัว", color: "text-blue-600" },
+    { icon: Laptop, title: "ค่าน้ำมันรถยนต์", description: "฿60,000 ต่อปี", color: "text-purple-600" },
+    { icon: GraduationCap, title: "งบพัฒนาบุคลากร", description: "฿90,000 ต่อปี", color: "text-green-600" },
   ];
 
   const onboardingPhases = [
@@ -75,26 +75,26 @@ export function OfferCraft() {
                 
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-secondary">Base Salary</span>
-                    <span className="font-semibold text-slate-900">${offer.baseSalary.toLocaleString()}</span>
+                    <span className="text-gray-600">เงินเดือนพื้นฐาน</span>
+                    <span className="font-semibold text-slate-900">฿{offer.baseSalary.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-secondary">Annual Bonus Target</span>
-                    <span className="font-semibold text-slate-900">${offer.bonus.toLocaleString()}</span>
+                    <span className="text-gray-600">โบนัสประจำปี</span>
+                    <span className="font-semibold text-slate-900">฿{(offer.bonus || 0).toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-secondary">Equity Package</span>
-                    <span className="font-semibold text-slate-900">{offer.equity}% (4-year vest)</span>
+                    <span className="text-gray-600">หุ้นบริษัท</span>
+                    <span className="font-semibold text-slate-900">{offer.equity}% (4 ปี)</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-secondary">Signing Bonus</span>
-                    <span className="font-semibold text-slate-900">${offer.signingBonus.toLocaleString()}</span>
+                    <span className="text-gray-600">โบนัสเซ็นสัญญา</span>
+                    <span className="font-semibold text-slate-900">฿{(offer.signingBonus || 0).toLocaleString()}</span>
                   </div>
                   <div className="border-t pt-3">
                     <div className="flex justify-between items-center">
-                      <span className="font-medium text-slate-900">Total First Year Value</span>
+                      <span className="font-medium text-slate-900">มูลค่ารวมปีแรก</span>
                       <span className="text-xl font-bold text-orange-600">
-                        ${(offer.baseSalary + offer.bonus + offer.signingBonus).toLocaleString()}
+                        ฿{(offer.baseSalary + (offer.bonus || 0) + (offer.signingBonus || 0)).toLocaleString()}
                       </span>
                     </div>
                   </div>
