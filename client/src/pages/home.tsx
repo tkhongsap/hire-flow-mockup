@@ -148,36 +148,23 @@ export default function Home() {
         <div className="relative container mx-auto px-6 py-16">
           <div className="text-center">
             <motion.h1 
-              className="text-5xl font-bold text-white mb-6"
+              className="text-5xl font-bold mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              HireFlow 5 <span style={{ color: 'hsl(var(--thaibev-gold))' }}>for ThaiBev</span>
+              <span className="text-white">HireFlow 5 </span>
+              <span className="text-white">for </span>
+              <span style={{ color: 'hsl(var(--chang-green))' }}>ThaiBev</span>
             </motion.h1>
             <motion.p 
-              className="text-xl text-gray-300 max-w-3xl mx-auto mb-8"
+              className="text-xl text-gray-300 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              From Chang bottle line to onboarding buddy — AI-powered recruitment that plugs straight into SAP SuccessFactors
+              AI-powered recruitment that plugs straight into SAP SuccessFactors
             </motion.p>
-            <motion.div 
-              className="flex justify-center space-x-4"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
-                <div className="text-2xl font-bold" style={{ color: 'hsl(var(--chang-green))' }}>THB 87M</div>
-                <div className="text-sm">Annual hiring cost reduction target</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
-                <div className="text-2xl font-bold" style={{ color: 'hsl(var(--thaibev-gold))' }}>35 → 20</div>
-                <div className="text-sm">Days to hire reduction</div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>

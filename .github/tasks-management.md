@@ -13,8 +13,9 @@
   - [x] Chang bottling-line hero video placeholder
   - [x] ThaiBev color palette (Chang green #006341, gold #C6A664)
   - [ ] Panel Copilot feature (replaces Interview Copilot)
-  - [x] Updated value metrics (-15 days hire, +10% quality, -3% attrition)
-  - [x] ThaiBev-specific hero section with cost reduction targets
+  - [x] Updated value metrics in header bar
+  - [x] Clean hero section with proper ThaiBev branding
+  - [x] Simplified subtitle focused on AI-powered recruitment
 
 ### 📋 Backlog (Priority Order)
 1. **Landing Page - "Recruitment Rail"** (Week 2) ✅ COMPLETED
