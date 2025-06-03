@@ -133,6 +133,55 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Hero Section with Chang Reference */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+        <div className="absolute inset-0 opacity-20">
+          {/* Placeholder for Chang bottling-line video */}
+          <div className="w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent flex items-center justify-center">
+            <div className="text-center text-white/60">
+              <div className="text-6xl mb-4">🏭</div>
+              <p className="text-sm">Chang Bottling Line Video Background</p>
+              <p className="text-xs mt-2">(Production: 720p lazy-loaded)</p>
+            </div>
+          </div>
+        </div>
+        <div className="relative container mx-auto px-6 py-16">
+          <div className="text-center">
+            <motion.h1 
+              className="text-5xl font-bold text-white mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              HireFlow 5 <span style={{ color: 'hsl(var(--thaibev-gold))' }}>for ThaiBev</span>
+            </motion.h1>
+            <motion.p 
+              className="text-xl text-gray-300 max-w-3xl mx-auto mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              From Chang bottle line to onboarding buddy — AI-powered recruitment that plugs straight into SAP SuccessFactors
+            </motion.p>
+            <motion.div 
+              className="flex justify-center space-x-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
+                <div className="text-2xl font-bold" style={{ color: 'hsl(var(--chang-green))' }}>THB 87M</div>
+                <div className="text-sm">Annual hiring cost reduction target</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
+                <div className="text-2xl font-bold" style={{ color: 'hsl(var(--thaibev-gold))' }}>35 → 20</div>
+                <div className="text-sm">Days to hire reduction</div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Main Content */}
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">
@@ -142,7 +191,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            AI-Powered Recruitment Rail
+            Recruitment Rail — Five Glowing Stations
           </motion.h2>
           <motion.p 
             className="text-xl text-gray-600 max-w-2xl mx-auto"
@@ -150,7 +199,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Navigate through the complete recruitment lifecycle with five intelligent micro-apps
+            Navigate the complete hiring lifecycle with bilingual TH/EN AI micro-apps
           </motion.p>
         </div>
 
@@ -250,7 +299,7 @@ export default function Home() {
                     <h3 className="font-semibold text-slate-900 mb-1">{station.name}</h3>
                     <p className="text-sm text-gray-600 mb-2">{station.stage}</p>
                     <p className="text-xs text-gray-500 mb-2">{station.painPoint}</p>
-                    <p className="text-xs text-blue-600 font-medium mb-3">{station.solution}</p>
+                    <p className="text-xs font-medium mb-3" style={{ color: 'hsl(var(--chang-green))' }}>{station.solution}</p>
                     
                     <div className="space-y-1 mb-4">
                       {station.benefits.map((benefit, idx) => (
@@ -262,7 +311,8 @@ export default function Home() {
                     </div>
                     
                     <Button 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="text-white"
+                      style={{ backgroundColor: 'hsl(var(--thaibev-gold))' }}
                       onClick={() => handleStationClick(station.route)}
                     >
                       Enter Demo

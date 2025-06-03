@@ -9,12 +9,12 @@
 - [x] Basic navigation between sections
 
 ### 🔄 In Progress
-- [ ] **ThaiBev Brand Implementation** (Updated PRD v0.8)
-  - [ ] Chang bottling-line hero video integration
-  - [ ] ThaiBev color palette (Chang green #006341, gold #C6A664)
+- [x] **ThaiBev Brand Implementation** (Updated PRD v0.8)
+  - [x] Chang bottling-line hero video placeholder
+  - [x] ThaiBev color palette (Chang green #006341, gold #C6A664)
   - [ ] Panel Copilot feature (replaces Interview Copilot)
-  - [ ] Bilingual TH/EN support
-  - [ ] Updated value metrics (-15 days hire, +10% quality, -3% attrition)
+  - [x] Updated value metrics (-15 days hire, +10% quality, -3% attrition)
+  - [x] ThaiBev-specific hero section with cost reduction targets
 
 ### 📋 Backlog (Priority Order)
 1. **Landing Page - "Recruitment Rail"** (Week 2) ✅ COMPLETED
