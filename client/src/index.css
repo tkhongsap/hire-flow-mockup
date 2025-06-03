@@ -30,6 +30,10 @@
   --success: 142 76% 36%;
   --warning: 38 92% 50%;
   --error: 0 84% 60%;
+  
+  /* ThaiBev Brand Colors */
+  --chang-green: 150 100% 19%; /* #006341 */
+  --thaibev-gold: 41 52% 58%;  /* #C6A664 */
 }
 
 .dark {

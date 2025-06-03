@@ -9,11 +9,12 @@
 - [x] Basic navigation between sections
 
 ### 🔄 In Progress
-- [x] **Landing Page Redesign** (PRD Section 5.1)
-  - [x] Horizontal subway map with responsive layout
-  - [x] Station cards with hover/tap benefits fly-out
-  - [x] Persistent value bar with animated numbers
-  - [x] Dark header with logo and branding
+- [ ] **ThaiBev Brand Implementation** (Updated PRD v0.8)
+  - [ ] Chang bottling-line hero video integration
+  - [ ] ThaiBev color palette (Chang green #006341, gold #C6A664)
+  - [ ] Panel Copilot feature (replaces Interview Copilot)
+  - [ ] Bilingual TH/EN support
+  - [ ] Updated value metrics (-15 days hire, +10% quality, -3% attrition)
 
 ### 📋 Backlog (Priority Order)
 1. **Landing Page - "Recruitment Rail"** (Week 2) ✅ COMPLETED

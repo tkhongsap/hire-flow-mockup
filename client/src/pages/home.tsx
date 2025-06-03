@@ -18,23 +18,23 @@ export default function Home() {
       solution: "AI ranks candidates in minutes",
       route: "/resume-scorer",
       benefits: [
-        "50% faster candidate screening",
-        "Eliminate unconscious bias",
-        "Standardized scoring metrics"
+        "Upload CV → instant fit score & gaps",
+        "Tailored for F&B industry roles",
+        "Eliminate unconscious bias"
       ]
     },
     {
       id: 2,
-      name: "Interview Copilot",
-      stage: "Assess & Interview",
+      name: "Panel Copilot",
+      stage: "Assess & Interview", 
       icon: MessageSquare,
       painPoint: "Inconsistent interview quality",
-      solution: "Real-time guidance & question suggestions",
+      solution: "Smart questions, live notes, STAR summary",
       route: "/interview-copilot",
       benefits: [
-        "Structured interview framework",
-        "Real-time candidate insights",
-        "Automated note-taking"
+        "Prepare deck → live tag → instant summary",
+        "Real-time transcript & tagging",
+        "STAR bullets & competency heat-map"
       ]
     },
     {
@@ -98,7 +98,7 @@ export default function Home() {
               <h1 className="text-xl font-semibold">HireFlow 5</h1>
             </div>
             
-            {/* Value Bar */}
+            {/* ThaiBev Value Bar */}
             <motion.div 
               className="hidden md:flex items-center space-x-6 text-sm"
               initial={{ opacity: 0, y: -10 }}
@@ -110,7 +110,7 @@ export default function Home() {
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
               >
-                <span className="text-green-400 font-medium">50% faster fill</span>
+                <span className="font-medium" style={{ color: 'hsl(var(--chang-green))' }}>-15 days hire</span>
               </motion.div>
               <span className="text-gray-400">•</span>
               <motion.div 
@@ -118,7 +118,7 @@ export default function Home() {
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, delay: 1 }}
               >
-                <span className="text-blue-400 font-medium">+15% quality-hire</span>
+                <span className="font-medium" style={{ color: 'hsl(var(--thaibev-gold))' }}>+10% quality hire</span>
               </motion.div>
               <span className="text-gray-400">•</span>
               <motion.div 
@@ -126,7 +126,7 @@ export default function Home() {
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, delay: 2 }}
               >
-                <span className="text-purple-400 font-medium">-5% early attrition</span>
+                <span className="font-medium" style={{ color: 'hsl(var(--chang-green))' }}>-3% attrition</span>
               </motion.div>
             </motion.div>
           </div>
@@ -173,13 +173,14 @@ export default function Home() {
                     {/* Station Card */}
                     <div className="bg-white rounded-lg shadow-md p-6 mx-4 cursor-pointer hover:shadow-lg transition-all duration-300 relative z-10">
                       <div className="text-center">
-                        <div className={`w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 flex items-center justify-center`}>
-                          <station.icon className="w-6 h-6 text-blue-600" />
+                        <div className={`w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center`} 
+                             style={{ backgroundColor: 'hsl(var(--chang-green) / 0.1)' }}>
+                          <station.icon className="w-6 h-6" style={{ color: 'hsl(var(--chang-green))' }} />
                         </div>
                         <h3 className="font-semibold text-slate-900 mb-1">{station.name}</h3>
                         <p className="text-sm text-gray-600 mb-2">{station.stage}</p>
                         <p className="text-xs text-gray-500 mb-1">{station.painPoint}</p>
-                        <p className="text-xs text-blue-600 font-medium">{station.solution}</p>
+                        <p className="text-xs font-medium" style={{ color: 'hsl(var(--chang-green))' }}>{station.solution}</p>
                       </div>
                     </div>
 
@@ -200,13 +201,23 @@ export default function Home() {
                             </div>
                           ))}
                         </div>
-                        <Button 
-                          className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-                          onClick={() => handleStationClick(station.route)}
-                        >
-                          Enter Demo
-                          <ChevronRight className="w-4 h-4 ml-2" />
-                        </Button>
+                        <div className="flex space-x-2">
+                          <Button 
+                            className="flex-1 text-white"
+                            style={{ backgroundColor: 'hsl(var(--thaibev-gold))', borderColor: 'hsl(var(--thaibev-gold))' }}
+                            onClick={() => handleStationClick(station.route)}
+                          >
+                            Enter Demo
+                            <ChevronRight className="w-4 h-4 ml-2" />
+                          </Button>
+                          <Button 
+                            variant="outline"
+                            className="flex-1"
+                            style={{ borderColor: 'hsl(var(--chang-green))', color: 'hsl(var(--chang-green))' }}
+                          >
+                            View API Spec
+                          </Button>
+                        </div>
                       </motion.div>
                     )}
                   </motion.div>
@@ -231,8 +242,9 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                    <station.icon className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" 
+                       style={{ backgroundColor: 'hsl(var(--chang-green) / 0.1)' }}>
+                    <station.icon className="w-6 h-6" style={{ color: 'hsl(var(--chang-green))' }} />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-slate-900 mb-1">{station.name}</h3>
